@@ -27,7 +27,9 @@ body {
   );
 
   min-width: fit-content;
-  padding: 7px 10px;
-  border-radius: 6px;
+  padding-inline: 1.5rem;
+  padding-block: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
   color: white;
 }

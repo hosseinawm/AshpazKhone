@@ -5,7 +5,7 @@ export default function Hero() {
     <section
       className="
         relative
-        min-h-190
+        min-h-170
         w-full
         bg-cover
         bg-center

@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import Image from "next/image";
+import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 
 import {
   CookingPot,
@@ -14,6 +16,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import Logo from "@/public/logo/Logo_ashpazkhone.svg";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,9 +54,21 @@ function Navbar() {
       <header className="relative z-50 flex h-16 w-full items-center justify-between px-4 shadow-xl sm:px-6 lg:px-10">
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center gap-2 sm:gap-3">
-          <CookingPot className="text-[#49762b]" size={26} />
-
-          <span className="text-xl sm:text-2xl lg:text-3xl">AshpazKhone</span>
+          <Image
+            src={Logo}
+            alt="Logo"
+            width={40}
+            height={40}
+            className="dark:invert"
+          />
+          <AnimatedGradientText
+            className="text-xl sm:text-2xl lg:text-3xl"
+            colorFrom="#4f7932"
+            colorTo="#f0512e"
+            speed={0.8}
+          >
+            AshpazKhone
+          </AnimatedGradientText>
         </Link>
 
         {/* Desktop Navigation */}
@@ -128,9 +143,21 @@ function Navbar() {
             onClick={closeDrawer}
             className="flex items-center gap-2"
           >
-            <CookingPot className="text-[#49762b]" size={26} />
-
-            <span className="text-2xl">AshpazKhone</span>
+            <Image
+              src={Logo}
+              alt="Logo"
+              width={40}
+              height={40}
+              className="dark:invert"
+            />
+            <AnimatedGradientText
+              className="text-2xl"
+              colorFrom="#4f7932"
+              colorTo="#f0512e"
+              speed={0.8}
+            >
+              AshpazKhone
+            </AnimatedGradientText>
           </Link>
 
           <button

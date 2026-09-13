@@ -3,21 +3,32 @@
 import { recipeCategories } from "@/data/categories";
 import Link from "next/link";
 import Image from "next/image";
+import category from "@/public/sections/category.svg";
 
 function RecipeCategories() {
   return (
     <section className="py-12 px-5 md:px-10 lg:px-13 xl:px-20">
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold">Explore Categories</h2>
-
-          <p className="mt-1 text-sm text-muted-foreground">
-            Find your favorite recipes by category
-          </p>
+          <div className="flex items-center gap-3">
+            <Image
+              src={category}
+              alt="Logo"
+              width={40}
+              height={40}
+              className="dark:invert"
+            />
+            <h2 className="text-3xl font-bold">Explore Categories</h2>
+          </div>
+          <div className="px-13">
+            <p className="mt-1 text-sm text-muted-foreground">
+              Find your favorite recipes by category
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="flex gap-3 md:gap-5 xl:gap-9 overflow-x-auto py-3 max-w-7xl m-auto">
+      <div className="flex gap-3 md:gap-5 overflow-x-auto py-3 max-w-7xl m-auto">
         {recipeCategories.map((category) => (
           <Link
             key={category.slug}
@@ -33,7 +44,7 @@ function RecipeCategories() {
               justify-center
               gap-3
               rounded-2xl
-              px-5
+              px-10
               py-6
               text-card-foreground
               transition-all
@@ -49,12 +60,11 @@ function RecipeCategories() {
               alt={category.name}
               className="
                 flex
-                h-14
-                w-14
+                h-18
+                w-20
                 items-center
                 justify-center
                 rounded-full
-                bg-muted
                 text-3xl
                 transition-transform
                 duration-300

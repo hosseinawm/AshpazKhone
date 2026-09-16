@@ -28,7 +28,7 @@ function RecipeCategories() {
         </div>
       </div>
 
-      <div className="flex gap-3 md:gap-5 overflow-x-auto py-3 max-w-7xl m-auto">
+      <div className="flex gap-3 md:gap-5 overflow-x-auto lg:overflow-hidden py-3 px-6 max-w-7xl mx-auto">
         {recipeCategories.map((category) => (
           <Link
             key={category.slug}

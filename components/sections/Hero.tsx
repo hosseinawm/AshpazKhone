@@ -26,12 +26,12 @@ export default function Hero() {
           </h1>
 
           <p className="mt-5 max-w-lg text-base leading-7 text-white/80 sm:text-lg">
-            Diverse And Delicious Recipies For Every Taste And Skill Level
+            Diverse And Delicious Recipes For Every Taste And Skill Level
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/recipies" className="button">
-              See Recipies
+            <Link href="/recipes" className="button">
+              See Recipes
             </Link>
           </div>
         </div>

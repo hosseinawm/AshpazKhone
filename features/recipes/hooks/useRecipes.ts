@@ -6,6 +6,6 @@ import { getRecipes } from "../api/recipes.api";
 export function useRecipes() {
   return useQuery({
     queryKey: ["recipes"],
-    queryFn: getRecipes,
+    queryFn: () => getRecipes(50, 0),
   });
 }

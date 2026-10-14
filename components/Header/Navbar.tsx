@@ -7,7 +7,6 @@ import Image from "next/image";
 import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 
 import {
-  CookingPot,
   UserRound,
   Blender,
   House,
@@ -17,9 +16,12 @@ import {
   X,
 } from "lucide-react";
 import Logo from "@/public/logo/Logo_ashpazkhone.svg";
+import { usePathname } from "next/navigation";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const path = usePathname();
+  console.log(path);
 
   const navItems = [
     {
@@ -73,16 +75,20 @@ function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-6 lg:flex xl:gap-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="flex items-center gap-2 transition-transform hover:-translate-y-1"
-            >
-              {item.icon}
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isActive = path === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`flex items-center gap-2 transition-transform hover:-translate-y-1
+              ${isActive && "text-orange-500"}`}
+              >
+                {item.icon}
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Desktop Right Side */}
